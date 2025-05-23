@@ -1,0 +1,45 @@
+{
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "build:start": "npm run build && node dist/index.js",
+    "start": "node dist/index.js",
+    "dev": "tsx watch src/index.ts",
+    "test": "jest --config jest.config.js",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate:deploy": "prisma migrate deploy",
+    "prisma:migrate": "prisma migrate dev --name",
+    "prisma:studio": "prisma studio",
+    "prisma:reset": "prisma migrate reset --force",
+    "prisma:seed": "ts-node --esm prisma/seed.ts"
+  },
+  "dependencies": {
+    "@fastify/middie": "^9.0.3",
+    "@fastify/postgres": "^6.0.2",
+    "@fastify/swagger": "^9.5.1",
+    "@fastify/swagger-ui": "^5.2.2",
+    "@prisma/client": "^6.7.0",
+    "fastify": "^5.3.2",
+    "fastify-plugin": "^5.0.1",
+    "pg": "^8.15.6",
+    "prisma": "^6.7.0",
+    "ts-node": "^10.9.2"
+  },
+  "devDependencies": {
+    "@fastify/type-provider-json-schema-to-ts": "^5.0.0",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.15.17",
+    "jest": "^29.7.0",
+    "jest-fetch-mock": "^3.0.3",
+    "jest-module-name-mapper": "^0.1.5",
+    "ts-jest": "^29.3.2",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
+  },
+  "jest": {
+    "automock": false,
+    "setupFiles": [
+      "./jestSetup.js"
+    ]
+  }
+}
