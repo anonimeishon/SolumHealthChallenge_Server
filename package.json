@@ -3,6 +3,7 @@
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "build:start": "npm run build && node dist/index.js",
+    "build:prod": "npm run prisma:generate && npm run build && npm run prisma:migrate:deploy",
     "start": "node dist/index.js",
     "dev": "tsx watch src/index.ts",
     "test": "jest --config jest.config.js",
