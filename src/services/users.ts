@@ -1,5 +1,5 @@
-import { Prisma } from 'generated/prisma';
-import usersRepository from 'repositories/users';
+import { Prisma } from '../generated/prisma';
+import usersRepository from '../repositories/users';
 
 export const usersService = {
   getAllUsers: async () => {

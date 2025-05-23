@@ -1,4 +1,4 @@
-import usersRepository from 'repositories/users';
+import usersRepository from '../repositories/users.js';
 export const usersService = {
     getAllUsers: async () => {
         return await usersRepository.getAll();
@@ -8,7 +8,6 @@ export const usersService = {
     },
     createUser: async (userData) => {
         const user = await usersRepository.create(userData);
-        console.log('🚀 ~ users.ts:28 ~ createUser: ~ user:', user);
         return { user, message: 'User created successfully' };
     },
     updateUser: async (id, userData) => {

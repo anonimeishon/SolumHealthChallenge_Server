@@ -1,4 +1,4 @@
-import { RouteSchema } from 'types/schema-types';
+import { RouteSchema } from '../types/schema-types';
 
 export const userGetAllSchema = {
   response: {

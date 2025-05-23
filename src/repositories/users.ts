@@ -1,5 +1,5 @@
-import { Prisma } from 'generated/prisma';
-import { prismaClient } from 'lib/prismaClient';
+import { Prisma } from '../generated/prisma';
+import { prismaClient } from '../lib/prismaClient';
 export const usersRepository = {
   findByEmail: async (email: string) => {
     return prismaClient.user.findUnique({

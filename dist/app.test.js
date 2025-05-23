@@ -1,6 +1,6 @@
 jest.mock('./repositories/users.ts');
-import usersRepository from './repositories/users';
-import { usersService } from './services/users';
+import usersRepository from './repositories/users.js';
+import { usersService } from './services/users.js';
 // Jest's describe, beforeAll, afterAll
 beforeAll(() => {
     // Setup logic before all tests

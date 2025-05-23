@@ -1,5 +1,5 @@
-import usersRepository from 'repositories/users';
-import { usersService } from 'services/users';
+import usersRepository from '../repositories/users';
+import { usersService } from './users';
 
 jest.mock('../repositories/users.ts');
 

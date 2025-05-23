@@ -3,14 +3,13 @@ import {
   FastifyPluginCallback,
   FastifyPluginOptions,
 } from 'fastify';
-import { prismaClient } from '../../lib/prismaClient';
 import {
   userCreateSchema,
   userGetAllSchema,
   userGetOneSchema,
-} from 'schemas/users';
-import { usersService } from 'services/users';
-import { Prisma } from 'generated/prisma';
+} from '../../schemas/users';
+import { usersService } from '../../services/users';
+import { Prisma } from '../../generated/prisma';
 import { FromSchema } from 'json-schema-to-ts';
 
 export const usersController: FastifyPluginCallback = (

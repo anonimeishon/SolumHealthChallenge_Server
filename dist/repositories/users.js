@@ -1,12 +1,9 @@
-import { prismaClient } from 'lib/prismaClient';
+import { prismaClient } from '../lib/prismaClient.js';
 export const usersRepository = {
     findByEmail: async (email) => {
         return prismaClient.user.findUnique({
             where: { email },
-            include: {
-                Project: true,
-                UserProjects: true,
-            },
+            include: {},
         });
     },
     create: async (data) => {
@@ -17,18 +14,12 @@ export const usersRepository = {
     findById: async (id) => {
         return prismaClient.user.findUnique({
             where: { id },
-            include: {
-                Project: true,
-                UserProjects: true,
-            },
+            include: {},
         });
     },
     getAll: async () => {
         return prismaClient.user.findMany({
-            include: {
-                Project: true,
-                UserProjects: true,
-            },
+            include: {},
         });
     },
     update: async (id, data) => {
