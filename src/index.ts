@@ -81,8 +81,11 @@ const start = async () => {
   await server.register(usersController, { prefix: '/users' });
 
   try {
-    await server.listen({ port: 8080 });
-    console.log(`Server is running at http://localhost:8080`);
+    const port = process.env.PORT ? parseInt(process.env.PORT, 10) : 8080;
+    const host = '0.0.0.0'; // Listen on all available network interfaces
+    await server.listen({ port, host });
+    console.log(`Server is running at http://${host}:${port}`);
+    console.log(`Railway will expose this on port 80/443 at your public URL.`);
   } catch (err) {
     server.log.error(err);
     process.exit(1);
